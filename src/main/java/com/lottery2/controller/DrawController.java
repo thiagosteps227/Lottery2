@@ -14,53 +14,57 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.lottery2.model.Draw;
 import com.lottery2.repository.DrawRepository;
+import com.lottery2.service.DrawService;
 
 @RestController
 @RequestMapping("/loteria")
 public class DrawController {
-
+	
 	@Autowired
-	DrawRepository repository;
-
-	DrawController(DrawRepository repository) {
-		this.repository = repository;
-	}
+	DrawService service;
 
 	@GetMapping("/sorteios")
 	public ResponseEntity<List<Draw>>findAll() {
-		List<Draw> list = repository.findAll();
+		List<Draw> list = service.findAll();
 		return ResponseEntity.status(200).body(list);
 	}
 
 	@GetMapping("/sorteios/{id}")
 	public ResponseEntity<Optional<Draw>> one(@PathVariable Long id){
-		Optional<Draw> draw = repository.findById(id);
+		Optional<Draw> draw = service.findById(id);
 		return ResponseEntity.status(200).body(draw); 
 	}
 
 	@GetMapping("/sorteios/numero/{drawNumber}")
 	public ResponseEntity<List<Draw>> list(@PathVariable int drawNumber) {
-		List<Draw> list = repository.findByDrawNumber(drawNumber);
+		List<Draw> list = service.findByDrawNumber(drawNumber);
 		return ResponseEntity.status(200).body(list);
 	}
+	
+	@GetMapping("/sorteios/frequencia")
+	public ResponseEntity<List<Integer>> frequency() {
+		List<Integer> list = service.frequency();
+		return ResponseEntity.status(200).body(list);
+	}
+	
+	
 
 	@PostMapping("/sorteios")
 	public ResponseEntity<Draw> newDraw(@RequestBody Draw newDraw) {
-		repository.save(newDraw);
+		service.saveNewDraw(newDraw);
 		return ResponseEntity.status(201).body(newDraw);
 
 	}
 
 	@DeleteMapping("/sorteios/{id}")
 	public ResponseEntity<Draw> delete(@PathVariable Long id){
-		repository.deleteById(id);
+		service.remove(id);
 		return ResponseEntity.noContent().build(); 
 	}
 	
 	@PutMapping("/sorteios/{id}")
 	public ResponseEntity<Draw> replace(@RequestBody Draw draw, @PathVariable Long id){
-		repository.deleteById(id);
-		repository.save(draw);
+		service.replace(id, draw);
 		return ResponseEntity.status(201).body(draw);
 	}
 }
