@@ -1,0 +1,130 @@
+body {
+	height: 100%;
+	width: 100%;
+	font-family: 'Sarpanch', sans-serif;
+	color:black;
+	background-image: url("/images/LogoAmarelo.PNG");
+	background-repeat: no-repeat;
+	background-position: top;
+	background:white
+}
+
+#logo {
+	height: 30%;
+	width: 100%;
+	display:flex;
+	margin: auto;
+}
+
+#logo img{
+	height: 150px;
+	width: 150px;
+}
+
+#logo img:hover{
+	opacity: 0.8;
+}
+
+#logo a{
+	display:flex;
+}
+
+.btn {
+	color: rgb(13,26,44);
+	margin-left: 10px;
+}
+
+header{
+	background-color:white;
+  	
+}
+
+header h1{
+	color: black;
+	margin-right: auto;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+section {
+	height: 80%;
+	width: 100%;
+}
+
+.nav {
+	margin-bottom: 20px;
+	border-bottom: 1px solid rgb(248, 220, 175);
+}
+
+i {
+	color: black;
+	margin: 5px;
+}
+
+i:hover{
+	color: rgb(248, 220, 175);
+}
+
+#formGoogleSearch{
+	flex-direction: row;
+	display: flex;
+	margin-bottom: 5px;
+	justify-content: center;
+	height: 10%;
+}
+
+#googleInput{
+	width:50%;
+	height: 51px;
+}
+
+ul {
+	flex-direction: row;
+	justify-content: center;
+	
+}
+
+li { 
+	padding-right:15px;
+	font-size:150%;
+}
+
+a {
+	text-decoration: none;
+	color:black;
+	font-size: 20px;
+}
+
+a:hover{
+	text-decoration: none;
+	color: rgb(248, 220, 175);
+}
+	
+input{
+  border:2px solid rgb(248, 220, 175);
+  min-height:15px;
+}
+
+.numbersContainer {
+	margin-top: 15px;
+	width:50%;
+	display: flex;
+}
+
+.col {
+	height:15%;
+	width:20%;
+}
+.col:hover {
+	background-color: rgb(248, 220, 175);
+}
+
+footer{
+	height:10%;
+	width: 100%;
+	padding: 15px;
+	margin-top: 20px;
+	border-top: 1px solid rgb(248, 220, 175);
+	text-align: center;
+	color: black;
+}
