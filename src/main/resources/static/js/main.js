@@ -1,7 +1,7 @@
 // The root URL for the RESTful services
 const rootURL = "http://localhost:8080/WineCellar/rest/wines";
 
-var findAll= function () {
+const findAll= function () {
 	console.log('findAll');
 	$.ajax({
 		type: 'GET',
