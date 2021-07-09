@@ -11,7 +11,7 @@ var findAll= function () {
 	});
 };
 
-var renderList = function (list) {
+const renderList = function (list) {
 	//list=data.wine;
         console.log("response");
 	$.each(list, function(index, wine) {
