@@ -1,7 +1,7 @@
 package com.lottery2;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.assertEquals;
+
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
@@ -34,7 +34,6 @@ class Lottery2ApplicationTests {
 	    assertThat(jdbcTemplate).isNotNull();
 	    assertThat(entityManager).isNotNull();
 	    assertThat(drawRepository).isNotNull();
-	   
 	    
 	  }
 	  

@@ -47,8 +47,6 @@ public class DrawController {
 		return ResponseEntity.status(200).body(list);
 	}
 	
-	
-
 	@PostMapping("/sorteios")
 	public ResponseEntity<Draw> newDraw(@RequestBody Draw newDraw) {
 		service.saveNewDraw(newDraw);
